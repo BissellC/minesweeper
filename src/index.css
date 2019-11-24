@@ -17,19 +17,29 @@ body {
     rgba(252, 176, 69, 1) 100%
   );
 }
-
-td {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  font-size: 16px;
-  background: rgb(179, 179, 179);
+tr {
+  background: rgb(85, 0, 0);
   background: linear-gradient(
     90deg,
-    rgba(179, 179, 179, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
+    rgba(85, 0, 0, 1) 0%,
+    rgba(184, 0, 0, 1) 50%,
+    rgba(194, 111, 0, 1) 100%
   );
+}
+td {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 16px;
+
   font-family: 'VT323', monospace;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+td:hover {
+  background-color: whitesmoke;
 }
 
 h1 {
@@ -37,6 +47,8 @@ h1 {
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 50px;
+  padding-bottom: 0;
+  padding-top: 1rem;
 }
 
 table {
@@ -48,4 +60,50 @@ table {
   text-align: center;
   padding: 1rem;
   font-size: 30px;
+}
+
+.select {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+}
+
+button {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  margin: 0.5rem;
+  margin-top: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.easy {
+  background: rgb(134, 255, 116);
+  background: linear-gradient(
+    90deg,
+    rgba(134, 255, 116, 1) 0%,
+    rgba(210, 255, 213, 1) 100%
+  );
+}
+
+.medium {
+  background: rgb(255, 252, 116);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 252, 116, 1) 0%,
+    rgba(255, 255, 210, 1) 100%
+  );
+}
+
+.hard {
+  background: rgb(255, 116, 116);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 116, 116, 1) 0%,
+    rgba(255, 210, 210, 1) 100%
+  );
 }

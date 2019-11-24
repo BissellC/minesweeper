@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import HelloWorld from './components/HelloWorld'
 import axios from 'axios'
 import Square from './components/Square'
 
@@ -8,16 +7,15 @@ const App = () => {
   const [board, setBoard] = useState([])
   const [state, setState] = useState()
 
-  const newGameData = async () => {
-    const resp = await axios.post('https://minesweeper-api.herokuapp.com/games')
+  const newGame = async difficulty => {
+    const resp = await axios.post(
+      'https://minesweeper-api.herokuapp.com/games',
+      { difficulty: difficulty }
+    )
     console.log(resp.data)
     setBoard(resp.data.board)
     setGameID(resp.data.id)
   }
-
-  useEffect(() => {
-    newGameData()
-  }, [])
 
   const sendCheck = async (x, y) => {
     const resp = await axios.post(
@@ -45,6 +43,18 @@ const App = () => {
   return (
     <>
       <h1>Minesweeper</h1>
+      <p className="select">Select a difficulty to start!</p>
+      <section className="buttons">
+        <button className="easy" onClick={() => newGame(0)}>
+          Easy
+        </button>
+        <button className="medium" onClick={() => newGame(1)}>
+          Medium
+        </button>
+        <button className="hard" onClick={() => newGame(2)}>
+          Hard
+        </button>
+      </section>
       <table border="1">
         <tbody>
           {board.map((row, x) => {
